@@ -2,19 +2,20 @@
 {% block content %}
 
 <h1 class="home">Recent Articles</h1>
+<br>
+<br>
 <div class="article-div">
 {% for article in articles %}
 <div class="homeDiv">
   <div>
-    <a href="{% url 'main_app:article' article.id %}">
+    <a class="card-title-link" href="{% url 'main_app:article' article.id %}">
       <span class="card-title">{{ article.title }}</span>
     </a>
     <br>
+    <br>
       <a href = "{% url 'main_app:article' article.id %}"><img class="article-image" src={{article.image}} />
     </a>
-      <p class="article-body">Author: {{ article.author }}</p>
-      <p class="article-body">Description: {{ article.descriptor }}</p>
-      <p class="article-body">Publication Date: {{ article.date }}</p>
+      <p class="article-body">{{ article.date }}</p>
   </div>
 </div>
 {% endfor %}

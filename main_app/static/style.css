@@ -1,32 +1,61 @@
 .right{
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+    padding: 2vh;
     overflow: hidden;
-    background-color: #333;
-    color: white;
+    background-color: rgba(213, 220, 227, 0.687);
+    color: black;
+    font-family: 'Coustard', serif;
+}
+
+.page-footer{
+    position:absolute;
+    width: 100vw;
+    background-color: rgba(213, 220, 227, 0.687);
+    margin: 0;
+    text-align: center;
 }
 
 .home {
     margin-top: 5vh;
     color: black;
+    font-family: 'Coustard', serif;
 }
 
  .nav-link{
     display: flex;
-    color: black;
+
     text-align: center;
     padding: 14px 16px;
-    text-decoration: none;
 } 
 
-.nav-item{
+.card-title{
     color: black;
+    font-size: 3vh;
+    font-family: 'Coustard', serif;
+}
+
+.card-title-link{
+    text-decoration: none;
+}
+
+.publication-name{
+    color: black;
+    font-family: 'Coustard', serif;
+}
+
+.nav-item{
     text-align: center;
     padding: 14px 16px;
-    text-decoration: none;
+
     padding-left: 0;
-    margin: auto;
+    /* margin: auto; */
+}
+
+.link-info{
+    color: black;
+    font-family: 'Coustard', serif;
+    text-decoration: none;
+    font-size: 3.5vh;
 }
 
 
@@ -35,19 +64,11 @@
     justify-content: space-evenly;
     width: 100vw; 
     margin:auto;
-    background-color: #333;
+    background-color: rgba(213, 220, 227, 0.687);
   }
 
-
-.page-footer{
-    position:fixed;
-    bottom: 0;
-    width: 100vw;
-    text-align: center;
-}
-
 .body{
-    background-color: rgb(247, 245, 245);
+    background-color: rgba(213, 220, 227, 0.687);
     text-align: center;
     margin: auto;
     width: 100vw;
@@ -63,6 +84,10 @@
     max-height: 30vh;
 }
 
+.card-title:hover{
+    text-decoration: underline;
+}
+
 .article-div{
     display: flex;
     justify-content: space-evenly;
@@ -74,4 +99,23 @@
 .article-body{
     margin-top: 3px;
     margin-bottom: 3px;
+    color: black;
+    font-family: 'Coustard', serif;
+}
+
+.page-image{
+    float: left;
+    max-height: 25vw;
+    padding: 1vw;
+    margin-left: 15vw;
+}
+
+.article-guts{
+    text-align: justify;
+    margin-right: 15vw;
+    margin-left: 15vw;
+}
+
+.page-article.div{
+    width: 80vw;
 }

@@ -22,11 +22,13 @@ def articles_index(request):
 
 def article_detail(request, article_id):
     article = Article.objects.get(id=article_id)
-    return render(request, 'main_app/articles/detail.html', {'article': article})
+    print(article)
+    return render(request, 'main_app/article.html', {'article': article})
 
 def author_details(request, author_id):
-    article = Article.objects.get(id=author_id)
-    return render(request, 'main_app/cats/detail.html', {'article': article})
+    articles = Article.objects.get(id=author_id)
+    print(articles)
+    return render(request, 'main_app/cats/detail.html', {'articles': articles})
 
 def get_by_topic(request, author_id):
     article = Article.objects.get(id=author_id)
