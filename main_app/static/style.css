@@ -53,3 +53,25 @@
     width: 100vw;
 }
 
+.homeDiv{
+    width: 30vw;
+    margin-bottom: 4vh;
+}
+
+.article-image{
+    max-width: 40vw;
+    max-height: 30vh;
+}
+
+.article-div{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-bottom: 5vh;
+}
+
+.article-body{
+    margin-top: 3px;
+    margin-bottom: 3px;
+}

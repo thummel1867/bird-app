@@ -2,18 +2,21 @@
 {% block content %}
 
 <h1 class="home">Recent Articles</h1>
-
+<div class="article-div">
 {% for article in articles %}
-  <div class="card">
-    <a href="#">
-      <div class="card-content">
-        <span class="card-title">{{ article.title }}</span>
-        <p>Author: {{ article.author }}</p>
-        <p>Description: {{ article.descriptor }}</p>
-        <p>Publication Date: {{ article.date }}</p>
-      </div>
+<div class="homeDiv">
+  <div>
+    <a href="{% url 'main_app:article' article.id %}">
+      <span class="card-title">{{ article.title }}</span>
     </a>
+    <br>
+      <a href = "{% url 'main_app:article' article.id %}"><img class="article-image" src={{article.image}} />
+    </a>
+      <p class="article-body">Author: {{ article.author }}</p>
+      <p class="article-body">Description: {{ article.descriptor }}</p>
+      <p class="article-body">Publication Date: {{ article.date }}</p>
   </div>
+</div>
 {% endfor %}
-
+</div>
 {% endblock %}
