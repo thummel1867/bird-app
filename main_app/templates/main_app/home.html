@@ -1,0 +1,19 @@
+{% extends 'main_app/base.html' %}
+{% block content %}
+
+<h1 class="home">Recent Articles</h1>
+
+{% for article in articles %}
+  <div class="card">
+    <a href="{% url 'article' article.id %}">
+      <div class="card-content">
+        <span class="card-title">{{ article.title }}</span>
+        <p>Author: {{ article.author }}</p>
+        <p>Description: {{ article.descriptor }}</p>
+        <p>Publication Date: {{ article.date }}</p>
+      </div>
+    </a>
+  </div>
+{% endfor %}
+
+{% endblock %}

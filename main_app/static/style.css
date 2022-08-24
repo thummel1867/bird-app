@@ -1,0 +1,55 @@
+.right{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    color: white;
+}
+
+.home {
+    margin-top: 5vh;
+    color: black;
+}
+
+ .nav-link{
+    display: flex;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+
+} 
+
+.nav-item{
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    padding-left: 0;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100vw; 
+    margin:auto;
+    background-color: #333;
+  }
+
+
+.page-footer{
+    position:fixed;
+    bottom: 0;
+    width: 100vw;
+    text-align: center;
+}
+
+.body{
+    background-color: rgb(247, 245, 245);
+    text-align: center;
+    margin: auto;
+    width: 100vw;
+}
+
