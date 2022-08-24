@@ -9,7 +9,7 @@ def home(request):
     #   return render(request, 'main_app/home.html')
     articles = Article.objects.all()
     print(articles)
-    return render(request, 'main_app/home.html', {'article': articles})
+    return render(request, 'main_app/home.html', {'articles': articles})
 
 
 def about(request):
