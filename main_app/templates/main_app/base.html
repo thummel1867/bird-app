@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Acorns</title>
+    <title>Feathers and Wings</title>
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
     <link href="https://fonts.googleapis.com/css2?family=Coustard:wght@400;900&display=swap" rel="stylesheet">
@@ -17,7 +17,9 @@
 
 
 <body class="body">
-    <h1 class="publication-name">🪶 🪶 🪶 Feathers 🪶 🪶 🪶</h1>
+    <div class="heading">
+        <h1 class="publication-name">🪶 🪶 🪶 Feathers and Wings🪶 🪶 🪶 </h1>
+    </div>
     {% if user.is_authenticated %}
     <p class="log-out"><a class="log-out-link" href="{% url 'main_app:logout' %}">Log Out</a></p>
     {% endif %}
@@ -28,7 +30,8 @@
                 <p class="nav-item"><a href="{% url 'main_app:about' %}" class="link-info">About</a></p>
                 {% if user.is_authenticated %}
                 <p class="nav-item"><a href="{% url 'main_app:bird_create' %}" class="link-info">Add A Bird</a></p>
-                <p class="nav-item"><a href="{% url 'main_app:user_page' %}" class="link-info">User Page</a></p>
+                <p class="nav-item"><a href="{% url 'main_app:user_page' %}" class="link-info">{{user}}'s Page
+                </a></p>
                 {% else %}
                 <p class="nav-item"><a class="link-info" href="{% url 'main_app:signup' %}">Sign Up</a></p>
                 <p class="nav-item"><a class="link-info" href="{% url 'main_app:login' %}">Log In</a></p>

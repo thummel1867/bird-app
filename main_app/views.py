@@ -24,19 +24,9 @@ def bird_detail(request, bird_id):
     bird = Bird.objects.get(id=bird_id)
     return render(request, 'main_app/bird.html', {'bird': bird})
 
-# def author_details(request, author_id):
-#     articles = Article.objects.get(id=author_id)
-#     print(articles)
-#     return render(request, 'main_app/cats/detail.html', {'articles': articles})
-
-# def get_by_topic(request, author_id):
-#     article = Article.objects.get(id=author_id)
-#     return render(request, 'main_app/cats/detail.html', {'article': article})
-
 class BirdCreate(LoginRequiredMixin, CreateView):
     model = Bird
-    fields = ['title', 'scientific_name', 'conservation_status', 'image', 'family', 'description']
-
+    fields = ['title', 'scientific_name', 'conservation_status', 'image', 'family', 'date', 'description']
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)

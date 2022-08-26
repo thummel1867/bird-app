@@ -9,13 +9,15 @@
     <img class="page-image" src={{bird.image}} alt="bird.title" />
     <p class="article-guts">{{bird.description}}</p>
 </div>
+{% if bird.conservation_status %}
 <h1 class="c-status">Conservation Status: </h1>
 <p class="c-status-guts">{{bird.conservation_status}}</p>
+{% endif %}
 
 {% if user == bird.user %}
 <div class="card-action">
-    <a href="{% url 'main_app:bird_update' bird.id %}">Edit</a>
-    <a href="{% url 'main_app:bird_delete' bird.id %}">Delete</a>
+    <a class="edit-delete" href="{% url 'main_app:bird_update' bird.id %}">Edit</a>
+    <a class="edit-delete" href="{% url 'main_app:bird_delete' bird.id %}">Delete</a>
   </div>
 </div>
 {% endif %}

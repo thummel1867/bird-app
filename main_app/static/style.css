@@ -26,8 +26,8 @@
 
 .log-out-link {
   position: absolute;
-  top: 0px;
-  right: 20px;
+  top: 7vh;
+  right: 5vw;
   font-family: "Coustard", serif;
   text-decoration: none;
   color: black;
@@ -37,11 +37,11 @@
   text-decoration: underline;
 }
 
-.log-out {
+/* .log-out {
   position: absolute;
   top: 0px;
   right: 0px;
-}
+} */
 
 .home-sweet {
   margin-top: 5vh;
@@ -133,10 +133,8 @@
 }
 
 .page-image {
-  float: left;
   max-height: 25vw;
-  padding: 1vw;
-  margin-left: 15vw;
+  padding: .5vw;
 }
 
 .article-guts {
@@ -158,15 +156,16 @@
 .c-status {
   font-family: "Coustard", serif;
   font-size: 30px;
+  text-align: center;
 }
 
 .c-status-guts {
-  text-align: justify;
+  text-align: center;
   margin-right: 15vw;
   margin-left: 15vw;
   font-family: "Roboto Serif", serif;
   font-size: 30px;
-  padding-bottom: 5vh;
+  padding-bottom: 2vh;
 }
 
 .create-bird-form{
@@ -176,3 +175,25 @@
 .create-div{
   text-align: center;
 }
+
+.flip{
+  -moz-transform: scale(-1, 1);
+  -webkit-transform: scale(-1, 1);
+  -o-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+}
+
+.edit-delete{
+  margin-bottom: 4vh;
+  padding: 4vh;
+  text-decoration: none;
+  color: black;
+  font-family: "Coustard", serif;
+  font-size: 30px;
+}
+
+ul{
+  list-style: none;
+}
+
