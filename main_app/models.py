@@ -6,7 +6,8 @@ class Bird(models.Model):
     title = models.CharField(max_length=200)
     scientific_name = models.CharField(max_length=200)
     conservation_status = models.TextField(max_length=1000, blank=True)
-    date = models.DateField(blank=True, null=True)
+    created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)
     image = models.CharField(max_length=2000, blank=True)
     family = models.CharField(max_length = 200, blank=True)
     description = models.TextField(blank = True)
@@ -20,7 +21,7 @@ class Bird(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('/', kwargs={'bird_id': self.id})
+        return reverse('main_app:bird', kwargs={'bird_id': self.id})
 
     class Meta:
-        ordering = ['-date']
+        ordering = ['-created_on']

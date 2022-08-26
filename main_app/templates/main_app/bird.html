@@ -5,7 +5,7 @@
 <h1 class="home">{{bird.title}}</h1>
 <h1 class="sci-name">{{bird.scientific_name}}</h1>
 <h2 class="family">Family: {{bird.family}}</h2>
-<h2><a class="bird-user-bird-page" href="#">Added by: {{bird.user}}</a></h2>
+<h2><a class="bird-user-bird-page" href="{% url 'main_app:account_page' bird.user.id %}">Added by: {{bird.user}}</a></h2>
 <div class="page-article-div">
     <img class="page-image" src={{bird.image}} alt="bird.title" />
     <p class="article-guts">{{bird.description}}</p>

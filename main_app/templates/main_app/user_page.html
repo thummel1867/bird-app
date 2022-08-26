@@ -1,7 +1,11 @@
 {% extends 'main_app/base.html' %}
 {% block content %}
 
+{% if user == bird.user %}
 <h1 class="home-sweet">Your Birds</h1>
+{% else %}
+<h1>{{bird.user}}'s Birds</h1>
+{% endif %}
 <br>
 <br>
 <div class="article-div">

@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Bird
+from .models import Bird, User
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.forms import UserCreationForm
@@ -26,7 +26,7 @@ def bird_detail(request, bird_id):
 
 class BirdCreate(LoginRequiredMixin, CreateView):
     model = Bird
-    fields = ['title', 'scientific_name', 'conservation_status', 'image', 'family', 'date', 'description']
+    fields = ['title', 'scientific_name', 'conservation_status', 'image', 'family', 'description']
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)
@@ -34,12 +34,15 @@ class BirdCreate(LoginRequiredMixin, CreateView):
 class BirdUpdate(LoginRequiredMixin, UpdateView):
     model = Bird
     fields = ['title', 'scientific_name', 'conservation_status', 'image', 'family', 'description']
+    success_url='/'
 
 class BirdDelete(LoginRequiredMixin, DeleteView):
     model = Bird
     success_url = '/'
 
-
+def user_page(request, user_id):
+    bird_user = Bird.objects.get(id=user_id)
+    return render(request, 'main_app/user_page.html', {bird_user: bird_user})
 
 @login_required
 def user_detail(request):

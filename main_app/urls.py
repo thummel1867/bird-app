@@ -12,5 +12,6 @@ urlpatterns = [
     path('bird/<int:pk>/update/', views.BirdUpdate.as_view(), name='bird_update'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/signup/', views.signup, name='signup'),
-    path('user/', views.user_detail, name="user_page")
+    path('user/', views.user_detail, name="user_page"),
+    path('user/<int:user_id>/', views.user_page, name='account_page')
 ]   
