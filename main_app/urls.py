@@ -1,11 +1,16 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
+
 
 app_name = 'main_app'
 urlpatterns = [
     path('', views.home, name='home'),
     path('about/', views.about, name="about"),
-    path('articles/<int:article_id>/', views.article_detail, name='article'),
-    path('author/<int:author_id>', views.author_details, name="author_id"),
-    path('topics/<int:topic_id>', views.get_by_topic, name="topic_id")
+    path('bird/<int:bird_id>/', views.bird_detail, name='bird'),
+    path('bird/create/', views.BirdCreate.as_view(), name='bird_create'),
+    path('bird/<int:pk>/delete/', views.BirdDelete.as_view(), name='bird_delete'),
+    path('bird/<int:pk>/update/', views.BirdUpdate.as_view(), name='bird_update'),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/signup/', views.signup, name='signup'),
+    path('user/', views.user_detail, name="user_page")
 ]   

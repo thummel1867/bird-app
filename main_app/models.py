@@ -1,40 +1,24 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 
-TOPICS = (
-    ('world affairs', 'World Affairs'),
-
-)
-
-class Topic(models.Model):
-    topic_name: models.CharField(max_length=100)
-
-class Author(models.Model):
-    author_name = models.CharField(max_length=100)
-    author_bio = models.TextField(blank = True)
-
-    def __str__(self):
-        return self.author_name
-
-    def get_absolute_url(self):
-        return reverse('detail', kwargs={'author_id': self.id})
-
-class Article(models.Model):
+from django.contrib.auth.mixins import LoginRequiredMixin
+class Bird(models.Model):
     title = models.CharField(max_length=200)
-    author = models.ForeignKey(Author, on_delete=models.CASCADE)
+    scientific_name = models.CharField(max_length=200)
+    conservation_status = models.TextField(max_length=1000, blank=True)
     date = models.DateField(blank=True, null=True)
     image = models.CharField(max_length=500)
-    descriptor = models.CharField(max_length=20, choices=TOPICS)
-    secondary_descriptor = models.CharField(max_length=20, choices=TOPICS, blank=True)
-    guts = models.TextField(blank = True)
-    
+    family = models.CharField(max_length = 200, blank=True)
+    description = models.TextField(blank = True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('detail', kwargs={'article_id': self.id})
+        return reverse('detail', kwargs={'bird_id': self.id})
 
     class Meta:
         ordering = ['-date']

@@ -1,0 +1,22 @@
+{% extends 'main_app/base.html' %}
+{% block content %}
+
+
+<h1 class="home">{{bird.title}}</h1>
+<h1 class="sci-name">{{bird.scientific_name}}</h1>
+<h2 class="family">Family: {{bird.family}}</h2>
+<div class="page-article-div">
+    <img class="page-image" src={{bird.image}} alt="bird.title" />
+    <p class="article-guts">{{bird.description}}</p>
+</div>
+<h1 class="c-status">Conservation Status: </h1>
+<p class="c-status-guts">{{bird.conservation_status}}</p>
+
+
+<div class="card-action">
+    <a href="{% url 'main_app:bird_update' bird.id %}">Edit</a>
+    <a href="{% url 'main_app:bird_delete' bird.id %}">Delete</a>
+  </div>
+</div>
+
+{% endblock %}

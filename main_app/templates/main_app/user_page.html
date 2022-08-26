@@ -1,11 +1,11 @@
 {% extends 'main_app/base.html' %}
 {% block content %}
 
-<h1 class="home-sweet">Recently Added Birds</h1>
+<h1 class="home-sweet">Your Birds</h1>
 <br>
 <br>
 <div class="article-div">
-{% for bird in birds %}
+{% for bird in bird_user %}
 <div class="homeDiv">
   <div>
     <a class="card-title-link" href="{% url 'main_app:bird' bird.id %}">

@@ -1,0 +1,13 @@
+{% extends 'main_app/base.html' %}
+
+{% block content %}
+  <h1>Delete Bird</h1>
+
+  <h4>Are you sure you want to delete <span class="teal-text">{{ object.title }}</span>?</h4>
+
+  <form action="" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Yes!" class="btn">
+    <a href="{% url 'main_app:bird' bird.id %}">Cancel</a>
+  </form>
+{% endblock %}

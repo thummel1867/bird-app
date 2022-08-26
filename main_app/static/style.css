@@ -1,121 +1,178 @@
-.right{
-    list-style-type: none;
-    padding: 2vh;
-    overflow: hidden;
-    background-color: rgba(213, 220, 227, 0.687);
-    color: black;
-    font-family: 'Coustard', serif;
+.right {
+  list-style-type: none;
+  padding: 2vh;
+  overflow: hidden;
+  background-color: rgba(213, 220, 227, 0.687);
+  color: black;
+  font-family: "Coustard", serif;
 }
 
-.page-footer{
-    position:absolute;
-    width: 100vw;
-    background-color: rgba(213, 220, 227, 0.687);
-    margin: 0;
-    text-align: center;
+.sci-name {
+  font-family: "Roboto Serif", serif;
+  font-style: italic;
 }
 
-.home {
-    margin-top: 5vh;
-    color: black;
-    font-family: 'Coustard', serif;
+.family {
+  font-family: "Roboto Serif", serif;
 }
 
- .nav-link{
-    display: flex;
-
-    text-align: center;
-    padding: 14px 16px;
-} 
-
-.card-title{
-    color: black;
-    font-size: 3vh;
-    font-family: 'Coustard', serif;
+.page-footer {
+  position: fixed;
+  width: 100vw;
+  background-color: rgba(213, 220, 227, 0.687);
+  margin-bottom: 0;
+  text-align: center;
 }
 
-.card-title-link{
-    text-decoration: none;
+.log-out-link {
+  position: absolute;
+  top: 0px;
+  right: 20px;
+  font-family: "Coustard", serif;
+  text-decoration: none;
+  color: black;
 }
 
-.publication-name{
-    color: black;
-    font-family: 'Coustard', serif;
+.log-out-link:hover{
+  text-decoration: underline;
 }
 
-.nav-item{
-    text-align: center;
-    padding: 14px 16px;
-
-    padding-left: 0;
-    /* margin: auto; */
+.log-out {
+  position: absolute;
+  top: 0px;
+  right: 0px;
 }
 
-.link-info{
-    color: black;
-    font-family: 'Coustard', serif;
-    text-decoration: none;
-    font-size: 3.5vh;
+.home-sweet {
+  margin-top: 5vh;
+  color: black;
+  font-size: 7vh;
+  font-family: "Coustard", serif;
 }
 
+.nav-link {
+  display: flex;
+
+  text-align: center;
+  padding: 14px 16px;
+}
+
+.card-title {
+  color: black;
+  font-size: 3vh;
+  font-family: "Coustard", serif;
+}
+
+.card-title-link {
+  text-decoration: none;
+}
+
+.publication-name {
+  color: black;
+  font-family: "Coustard", serif;
+  font-size: 50px;
+}
+
+.nav-item {
+  text-align: center;
+  padding: 14px 16px;
+
+  padding-left: 0;
+  /* margin: auto; */
+}
+
+.link-info {
+  color: black;
+  font-family: "Coustard", serif;
+  text-decoration: none;
+  font-size: 3.5vh;
+}
 
 .navbar {
-    display: flex;
-    justify-content: space-evenly;
-    width: 100vw; 
-    margin:auto;
-    background-color: rgba(213, 220, 227, 0.687);
-  }
-
-.body{
-    background-color: rgba(213, 220, 227, 0.687);
-    text-align: center;
-    margin: auto;
-    width: 100vw;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100vw;
+  margin: auto;
+  background-color: rgba(93, 44, 10, 0.687);
 }
 
-.homeDiv{
-    width: 30vw;
-    margin-bottom: 4vh;
+.body {
+  background-color: rgba(213, 220, 227, 0.687);
+  text-align: center;
+  margin: auto;
+  width: 100vw;
 }
 
-.article-image{
-    max-width: 40vw;
-    max-height: 30vh;
+.homeDiv {
+  width: 30vw;
+  margin-bottom: 4vh;
 }
 
-.card-title:hover{
-    text-decoration: underline;
+.article-image {
+  max-width: 40vw;
+  max-height: 30vh;
 }
 
-.article-div{
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding-bottom: 5vh;
+.card-title:hover {
+  text-decoration: underline;
 }
 
-.article-body{
-    margin-top: 3px;
-    margin-bottom: 3px;
-    color: black;
-    font-family: 'Coustard', serif;
+.article-div {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-bottom: 5vh;
 }
 
-.page-image{
-    float: left;
-    max-height: 25vw;
-    padding: 1vw;
-    margin-left: 15vw;
+.article-body {
+  margin-top: 3px;
+  margin-bottom: 3px;
+  color: black;
+  font-family: "Coustard", serif;
 }
 
-.article-guts{
-    text-align: justify;
-    margin-right: 15vw;
-    margin-left: 15vw;
+.page-image {
+  float: left;
+  max-height: 25vw;
+  padding: 1vw;
+  margin-left: 15vw;
 }
 
-.page-article.div{
-    width: 80vw;
+.article-guts {
+  text-align: justify;
+  margin-right: 15vw;
+  margin-left: 15vw;
+  font-family: "Roboto Serif", serif;
+  font-size: 30px;
+}
+
+.page-article.div {
+  width: 80vw;
+}
+
+.container {
+  height: 80vh;
+}
+
+.c-status {
+  font-family: "Coustard", serif;
+  font-size: 30px;
+}
+
+.c-status-guts {
+  text-align: justify;
+  margin-right: 15vw;
+  margin-left: 15vw;
+  font-family: "Roboto Serif", serif;
+  font-size: 30px;
+  padding-bottom: 5vh;
+}
+
+.create-bird-form{
+  display: inline-block;
+}
+
+.create-div{
+  text-align: center;
 }
