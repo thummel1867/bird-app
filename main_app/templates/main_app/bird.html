@@ -12,11 +12,11 @@
 <h1 class="c-status">Conservation Status: </h1>
 <p class="c-status-guts">{{bird.conservation_status}}</p>
 
-
+{% if user == bird.user %}
 <div class="card-action">
     <a href="{% url 'main_app:bird_update' bird.id %}">Edit</a>
     <a href="{% url 'main_app:bird_delete' bird.id %}">Delete</a>
   </div>
 </div>
-
+{% endif %}
 {% endblock %}
