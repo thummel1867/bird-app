@@ -39,6 +39,8 @@ class BirdDelete(LoginRequiredMixin, DeleteView):
     model = Bird
     success_url = '/'
 
+
+
 @login_required
 def user_detail(request):
     bird_user = Bird.objects.filter(user=request.user)

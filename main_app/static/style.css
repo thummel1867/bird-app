@@ -109,7 +109,7 @@
 }
 
 .article-image {
-  max-width: 40vw;
+  max-width: 30vw;
   max-height: 30vh;
 }
 
@@ -197,3 +197,12 @@ ul{
   list-style: none;
 }
 
+.bird-user-bird-page{
+  text-decoration: none;
+  color: black;
+  font-family: "Roboto serif", serif;
+}
+
+.bird-user-bird-page:hover{
+  text-decoration: underline;
+}
