@@ -6,6 +6,12 @@
 <h1 class="sci-name">{{bird.scientific_name}}</h1>
 <h2 class="family">Family: {{bird.family}}</h2>
 <h2><a class="bird-user-bird-page" href="{% url 'main_app:account_page' bird.user.id %}">Added by: {{bird.user}}</a></h2>
+<div class="card-action">
+  <!-- <form action="{% url 'main_app:seen_bird' bird.id user.id %}" method="POST">
+    {% csrf_token %}
+    <button type="submit" class="btn">Add to Spotted</button>
+  </form> -->
+</div>
 <div class="page-article-div">
     <img class="page-image" src={{bird.image}} alt="bird.title" />
     <p class="article-guts">{{bird.description}}</p>
@@ -15,6 +21,9 @@
 <p class="c-status-guts">{{bird.conservation_status}}</p>
 {% endif %}
 
+<h2 class = "family">Created On: {{bird.created_on}}</h2>
+<h2 class = "family">Last Updated: {{bird.updated_on}}</h2>
+
 {% if user == bird.user %}
 <div class="card-action">
     <a class="edit-delete" href="{% url 'main_app:bird_update' bird.id %}">Edit</a>
@@ -23,3 +32,5 @@
 </div>
 {% endif %}
 {% endblock %}
+
+

@@ -14,10 +14,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz@8..144&display=swap" rel="stylesheet">
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
 </head>
+
 <body class="body">
     <div class="heading">
         <h1 class="publication-name">🪶 🪶 🪶 Feathers🪶 🪶 🪶 </h1>
     </div>
+    <form action="{% url 'main_app:search_results' %}" method="get">
+        <input name="q" type="text" placeholder="Search...">
+    </form>
+
     {% if user.is_authenticated %}
     <p class="log-out"><a class="log-out-link" href="{% url 'main_app:logout' %}">Log Out</a></p>
     {% endif %}
@@ -25,11 +30,11 @@
         <div class="navul">
             <nav class="navbar">
                 <p class="nav-item"><a href="{% url 'main_app:home' %}" class="link-info">Home</a></p>
-                <p class="nav-item"><a href="{% url 'main_app:about' %}" class="link-info">About</a></p>
+                <!-- <p class="nav-item"><a href="{% url 'main_app:about' %}" class="link-info">About</a></p> -->
                 {% if user.is_authenticated %}
                 <p class="nav-item"><a href="{% url 'main_app:bird_create' %}" class="link-info">Add A Bird</a></p>
                 <p class="nav-item"><a href="{% url 'main_app:user_page' %}" class="link-info">{{user}}'s Page
-                </a></p>
+                    </a></p>
                 {% else %}
                 <p class="nav-item"><a class="link-info" href="{% url 'main_app:signup' %}">Sign Up</a></p>
                 <p class="nav-item"><a class="link-info" href="{% url 'main_app:login' %}">Log In</a></p>
