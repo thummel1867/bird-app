@@ -41,7 +41,7 @@
 </div>
 {% endif %}
 
-{% if user == bird_user.0.user and user.seen %}
+{% if user == bird_user.0.user and user.seen.exists %}
 <h1 class="c-status">Birds You've Spotted</h1>
 <br>
 <br>
