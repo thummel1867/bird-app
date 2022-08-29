@@ -23,6 +23,13 @@ class SearchResultsView(ListView):
         return object_list
 
 
+def user_page(request, user_id):
+    bird_user = Bird.objects.filter(user=user_id)
+    # birds = Bird.objects.exclue(id__in=user_seen)
+    return render(request, 'main_app/user_page.html', {'bird_user': bird_user})
+
+
+
 def home(request):
     #   return render(request, 'main_app/home.html')
     birds = Bird.objects.all()
@@ -60,12 +67,6 @@ class BirdDelete(LoginRequiredMixin, DeleteView):
     success_url = '/'
 
 
-def user_page(request, user_id, user):
-    bird_user = Bird.objects.filter(user=user_id)
-    user_seen = bird_user.seen.all().values_list('id')
-    birds = Bird.objects.exclue(id__in=user_seen)
-    return render(request, 'main_app/user_page.html', {'bird_user': bird_user, 'birds': birds})
-
 
 @login_required
 def user_detail(request):
@@ -95,10 +96,29 @@ def seen_bird(request, user_id, bird_id):
     bird = Bird.objects.get(id=bird_id)
     user = User.objects.get(id=user_id)
     bird.seen.add(user)
-    return redirect('/')
+    return redirect('/user')
 
 @login_required
-def searching_bird(request, user, bird_id):
+def searching_bird(request, user_id, bird_id):
     bird = Bird.objects.get(id=bird_id)
-    bird.searching.add(user)
-    return redirect('/')
+    bird.searching.add(user_id)
+    return redirect('/user')
+
+
+@login_required
+def unassoc_seen_bird(request, user_id, bird_id):
+    bird = Bird.objects.get(id=bird_id)
+    bird.seen.remove(user_id)
+    return redirect('/user')
+
+@login_required
+def unassoc_searching_bird(request, user_id, bird_id):
+    bird = Bird.objects.get(id=bird_id)
+    bird.searching.remove(user_id)
+    return redirect('/user')
+
+def move_searching_bird(request, user_id, bird_id):
+    bird = Bird.objects.get(id=bird_id)
+    bird.searching.remove(user_id)
+    bird.seen.add(user_id)
+    return redirect('/user')

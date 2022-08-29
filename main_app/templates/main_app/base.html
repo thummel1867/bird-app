@@ -22,7 +22,7 @@
     <form action="{% url 'main_app:search_results' %}" method="get">
         <input name="q" type="text" placeholder="Search...">
     </form>
-
+    <br>
     {% if user.is_authenticated %}
     <p class="log-out"><a class="log-out-link" href="{% url 'main_app:logout' %}">Log Out</a></p>
     {% endif %}
