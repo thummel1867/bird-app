@@ -7,10 +7,17 @@
 <h2 class="family">Family: {{bird.family}}</h2>
 <h2><a class="bird-user-bird-page" href="{% url 'main_app:account_page' bird.user.id %}">Added by: {{bird.user}}</a></h2>
 <div class="card-action">
-  <!-- <form action="{% url 'main_app:seen_bird' bird.id user.id %}" method="POST">
+{% if user.is_authenticated %}
+  <form action="{% url 'main_app:seen_bird' bird.id user.id %}" method="POST">
     {% csrf_token %}
     <button type="submit" class="btn">Add to Spotted</button>
-  </form> -->
+  </form>
+  <br>
+  <form action="{% url 'main_app:searching_bird' bird.id user.id %}" method="POST">
+    {% csrf_token %}
+    <button type="submit" class="btn">Add to Searching</button>
+  </form>
+{% endif %}
 </div>
 <div class="page-article-div">
     <img class="page-image" src={{bird.image}} alt="bird.title" />
@@ -21,8 +28,8 @@
 <p class="c-status-guts">{{bird.conservation_status}}</p>
 {% endif %}
 
-<h2 class = "family">Created On: {{bird.created_on}}</h2>
-<h2 class = "family">Last Updated: {{bird.updated_on}}</h2>
+<h2 class = "create-edit">Created On: {{bird.created_on}}</h2>
+<h2 class = "create-edit">Last Updated: {{bird.updated_on}}</h2>
 
 {% if user == bird.user %}
 <div class="card-action">
