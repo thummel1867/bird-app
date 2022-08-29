@@ -16,5 +16,8 @@ urlpatterns = [
     path('user/<int:user_id>/', views.user_page, name='account_page'),
     path("search/", views.SearchResultsView.as_view(), name="search_results"),
     path('bird/seen/<int:bird_id>/assoc_user/<int:user_id>/', views.seen_bird, name = "seen_bird"),
-    path('bird/searching/<int:bird_id>/assoc_user/<int:user_id>/', views.searching_bird, name = "searching_bird")
+    path('bird/searching/<int:bird_id>/assoc_user/<int:user_id>/', views.searching_bird, name = "searching_bird"),
+    path('bird/seen/<int:bird_id>/unassoc_user/<int:user_id>/', views.unassoc_seen_bird, name = "remove_seen_bird"),
+    path('bird/searching/<int:bird_id>/unassoc_user/<int:user_id>/', views.unassoc_searching_bird, name = "remove_searching_bird"),
+    path('bird/searching/<int:bird_id>/move/<int:user_id>/', views.move_searching_bird, name = "move_searching_bird")
 ]   

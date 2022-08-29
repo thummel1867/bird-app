@@ -1,12 +1,27 @@
 {% extends 'main_app/base.html' %}
 {% block content %}
 
-<!-- {{user.seen.all}} -->
 {% if user == bird_user.0.user %}
-<h1 class="home-sweet">Your Birds</h1>
+<h1 class="c-status">Birds You've Added</h1>
+<br>
+<br>
+<div class="article-div">
+  {% for bird in bird_user %}
+  <div class="homeDiv">
+    <div>
+      <a class="card-title-link" href="{% url 'main_app:bird' bird.id %}">
+        <span class="card-title">{{ bird.title }}</span>
+      </a>
+      <br>
+      <br>
+        <a href = "{% url 'main_app:bird' bird.id %}"><img class="article-image" src={{bird.image}} />
+      </a>
+    </div>
+  </div>
+  {% endfor %}
+  </div>
 {% else %}
-<h1>{{bird_user.0.user}}'s Birds</h1>
-{% endif %}
+<h1 class = "c-status">Birds {{bird_user.0.user}} has added to the database</h1>
 <br>
 <br>
 <div class="article-div">
@@ -23,18 +38,101 @@
   </div>
 </div>
 {% endfor %}
-{% for bird in birds %}
-<div class="homeDiv">
-  <div>
-    <a class="card-title-link" href="{% url 'main_app:bird' bird.id %}">
-      <span class="card-title">{{ bird.title }}</span>
-    </a>
-    <br>
-    <br>
-      <a href = "{% url 'main_app:bird' bird.id %}"><img class="article-image" src={{bird.image}} />
-    </a>
+</div>
+{% endif %}
+
+{% if user == bird_user.0.user and user.seen %}
+<h1 class="c-status">Birds You've Spotted</h1>
+<br>
+<br>
+<div class = "article-div">
+  {% for bird in user.seen.all %}
+  <div class="homeDiv">
+    <div>
+      <a class="card-title-link" href="{% url 'main_app:bird' bird.id %}">
+        <span class="card-title">{{ bird.title }}</span>
+      </a>
+        <a href = "{% url 'main_app:bird' bird.id %}"><img class="article-image" src={{bird.image}} />
+      </a>
+    </div>
+    <form action="{% url 'main_app:remove_seen_bird' bird.id user.id %}" method="POST">
+      {% csrf_token %}
+      <button type="submit" class="btn">Remove from Spotted</button>
+    </form>
   </div>
+  {% endfor %}
 </div>
-{% endfor %}
+
+
+{% elif bird_user.0.user.seen.exists %}
+<h1 class="c-status">Birds {{bird_user.0.user}} Has Spotted</h1>
+
+<div class = "article-div">
+  {% for bird in bird_user.0.user.seen.all %}
+  <div class="homeDiv">
+    <div>
+      <a class="card-title-link" href="{% url 'main_app:bird' bird.id %}">
+        <span class="card-title">{{ bird.title }}</span>
+      </a>
+      <br>
+      <br>
+        <a href = "{% url 'main_app:bird' bird.id %}"><img class="article-image" src={{bird.image}} />
+      </a>
+    </div>
+  </div>
+  {% endfor %}
 </div>
+{% endif %}
+
+
+{% if user == bird_user.0.user and user.searching.exists %}
+<h1 class="c-status">Birds You're On The Lookout For</h1>
+<br>
+<br>
+<div class = "article-div">
+  {% for bird in user.searching.all %}
+  <div class="homeDiv">
+    <div>
+      <a class="card-title-link" href="{% url 'main_app:bird' bird.id %}">
+        <span class="card-title">{{ bird.title }}</span>
+      </a>
+      <br>
+      <br>
+        <a href = "{% url 'main_app:bird' bird.id %}"><img class="article-image" src={{bird.image}} />
+      </a>
+    </div>
+    <form action="{% url 'main_app:remove_searching_bird' bird.id user.id %}" method="POST">
+      {% csrf_token %}
+    <button type="submit" class="btn">Remove from Searching</button>
+    </form>
+    <br>
+    <form action="{% url 'main_app:move_searching_bird' bird.id user.id %}" method="POST">
+      {% csrf_token %}
+    <button type="submit" class="btn">Move to Spotted</button>
+    </form>
+  </div>
+  {% endfor %}
+</div>
+{% elif bird_user.0.user.searching.exists %}
+<h1 class="c-status">Birds {{bird_user.0.user}} Is On The Lookout For</h1>
+<br>
+<br>
+<div class = "article-div">
+  {% for bird in bird_user.0.user.searching.all %}
+  <div class="homeDiv">
+    <div>
+      <a class="card-title-link" href="{% url 'main_app:bird' bird.id %}">
+        <span class="card-title">{{ bird.title }}</span>
+      </a>
+      <br>
+      <br>
+        <a href = "{% url 'main_app:bird' bird.id %}"><img class="article-image" src={{bird.image}} />
+      </a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
 {% endblock %}
+
+
