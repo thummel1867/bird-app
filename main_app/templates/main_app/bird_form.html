@@ -1,0 +1,21 @@
+{% extends 'main_app/base.html' %}
+
+{% block content %}
+
+{% if object %}
+  <h1>Edit <span class="teal-text">{{ object.name }}</span></h1>
+{% else %}
+  <h1>Add Bird</h1>
+{% endif %}
+
+<!-- empty action attribute will post to the same url in the address bar -->
+<div class="create-div">
+<form class = "create-bird-form" action="" method="POST">
+  {% csrf_token %}
+  <table>
+    {{ form.as_table }}
+  </table>
+  <input type="submit" value="Submit!" class="btn">
+</form>
+</div>
+{% endblock %}

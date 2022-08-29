@@ -1,19 +1,22 @@
 {% extends 'main_app/base.html' %}
 {% block content %}
 
-<h1 class="home">Recent Articles</h1>
-
-{% for article in articles %}
-  <div class="card">
-    <a href="{% url 'article' article.id %}">
-      <div class="card-content">
-        <span class="card-title">{{ article.title }}</span>
-        <p>Author: {{ article.author }}</p>
-        <p>Description: {{ article.descriptor }}</p>
-        <p>Publication Date: {{ article.date }}</p>
-      </div>
+<h1 class="home-sweet">Recently Added Birds</h1>
+<br>
+<br>
+<div class="article-div">
+{% for bird in birds %}
+<div class="homeDiv">
+  <div>
+    <a class="card-title-link" href="{% url 'main_app:bird' bird.id %}">
+      <span class="card-title">{{ bird.title }}</span>
+    </a>
+    <br>
+    <br>
+      <a href = "{% url 'main_app:bird' bird.id %}"><img class="article-image" src={{bird.image}} />
     </a>
   </div>
+</div>
 {% endfor %}
-
+</div>
 {% endblock %}

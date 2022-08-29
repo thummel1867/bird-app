@@ -1,0 +1,40 @@
+{% extends 'main_app/base.html' %}
+{% block content %}
+
+<!-- {{user.seen.all}} -->
+{% if user == bird_user.0.user %}
+<h1 class="home-sweet">Your Birds</h1>
+{% else %}
+<h1>{{bird_user.0.user}}'s Birds</h1>
+{% endif %}
+<br>
+<br>
+<div class="article-div">
+{% for bird in bird_user %}
+<div class="homeDiv">
+  <div>
+    <a class="card-title-link" href="{% url 'main_app:bird' bird.id %}">
+      <span class="card-title">{{ bird.title }}</span>
+    </a>
+    <br>
+    <br>
+      <a href = "{% url 'main_app:bird' bird.id %}"><img class="article-image" src={{bird.image}} />
+    </a>
+  </div>
+</div>
+{% endfor %}
+{% for bird in birds %}
+<div class="homeDiv">
+  <div>
+    <a class="card-title-link" href="{% url 'main_app:bird' bird.id %}">
+      <span class="card-title">{{ bird.title }}</span>
+    </a>
+    <br>
+    <br>
+      <a href = "{% url 'main_app:bird' bird.id %}"><img class="article-image" src={{bird.image}} />
+    </a>
+  </div>
+</div>
+{% endfor %}
+</div>
+{% endblock %}
