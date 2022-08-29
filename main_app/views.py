@@ -96,29 +96,29 @@ def seen_bird(request, user_id, bird_id):
     bird = Bird.objects.get(id=bird_id)
     user = User.objects.get(id=user_id)
     bird.seen.add(user)
-    return redirect('/')
+    return redirect('/user')
 
 @login_required
 def searching_bird(request, user_id, bird_id):
     bird = Bird.objects.get(id=bird_id)
     bird.searching.add(user_id)
-    return redirect('/')
+    return redirect('/user')
 
 
 @login_required
 def unassoc_seen_bird(request, user_id, bird_id):
     bird = Bird.objects.get(id=bird_id)
     bird.seen.remove(user_id)
-    return redirect('/')
+    return redirect('/user')
 
 @login_required
 def unassoc_searching_bird(request, user_id, bird_id):
     bird = Bird.objects.get(id=bird_id)
     bird.searching.remove(user_id)
-    return redirect('/')
+    return redirect('/user')
 
 def move_searching_bird(request, user_id, bird_id):
     bird = Bird.objects.get(id=bird_id)
     bird.searching.remove(user_id)
     bird.seen.add(user_id)
-    return redirect('/')
+    return redirect('/user')
