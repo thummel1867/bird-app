@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'news_app.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'bird_app',
+        'NAME': 'news_app',
     }
 }
 
