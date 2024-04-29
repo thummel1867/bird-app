@@ -1,0 +1,214 @@
+.right {
+  list-style-type: none;
+  padding: 2vh;
+  overflow: hidden;
+  background-color: rgba(213, 220, 227, 0.687);
+  color: black;
+  font-family: "Coustard", serif;
+}
+
+.sci-name {
+  font-family: "Roboto Serif", serif;
+  font-style: italic;
+}
+
+.family {
+  font-family: "Roboto Serif", serif;
+}
+
+.page-footer {
+  position: fixed;
+  width: 100vw;
+  background-color: rgba(213, 220, 227, 0.687);
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.log-out-link {
+  position: absolute;
+  top: 7vh;
+  right: 5vw;
+  font-family: "Coustard", serif;
+  text-decoration: none;
+  color: black;
+}
+
+.log-out-link:hover{
+  text-decoration: underline;
+}
+
+/* .log-out {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+} */
+
+.home-sweet {
+  margin-top: 5vh;
+  color: black;
+  font-size: 7vh;
+  font-family: "Coustard", serif;
+}
+
+.nav-link {
+  display: flex;
+
+  text-align: center;
+  padding: 14px 16px;
+}
+
+.card-title {
+  color: black;
+  font-size: 3vh;
+  font-family: "Coustard", serif;
+}
+
+.card-title-link {
+  text-decoration: none;
+}
+
+.publication-name {
+  color: black;
+  font-family: "Coustard", serif;
+  font-size: 50px;
+}
+
+.nav-item {
+  text-align: center;
+  padding: 14px 16px;
+
+  padding-left: 0;
+  /* margin: auto; */
+}
+
+.link-info {
+  color: black;
+  font-family: "Coustard", serif;
+  text-decoration: none;
+  font-size: 3.5vh;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100vw;
+  margin: auto;
+  background-color: rgba(93, 44, 10, 0.687);
+}
+
+.body {
+  background-color: rgba(213, 220, 227, 0.687);
+  text-align: center;
+  margin: auto;
+  width: 100vw;
+}
+
+.homeDiv {
+  width: 30vw;
+  margin-bottom: 4vh;
+}
+
+.article-image {
+  max-width: 30vw;
+  max-height: 30vh;
+}
+
+.card-title:hover {
+  text-decoration: underline;
+}
+
+.article-div {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-bottom: 5vh;
+}
+
+.article-body {
+  margin-top: 3px;
+  margin-bottom: 3px;
+  color: black;
+  font-family: "Coustard", serif;
+}
+
+.page-image {
+  max-height: 25vw;
+  padding: .5vw;
+}
+
+.article-guts {
+  text-align: justify;
+  margin-right: 15vw;
+  margin-left: 15vw;
+  font-family: "Roboto Serif", serif;
+  font-size: 30px;
+}
+
+.page-article.div {
+  width: 80vw;
+}
+
+.container {
+  height: 80vh;
+}
+
+.c-status {
+  font-family: "Coustard", serif;
+  font-size: 30px;
+  text-align: center;
+}
+
+.c-status-guts {
+  text-align: center;
+  margin-right: 15vw;
+  margin-left: 15vw;
+  font-family: "Roboto Serif", serif;
+  font-size: 30px;
+  padding-bottom: 2vh;
+}
+
+.create-bird-form{
+  display: inline-block;
+}
+
+.create-div{
+  text-align: center;
+}
+
+.flip{
+  -moz-transform: scale(-1, 1);
+  -webkit-transform: scale(-1, 1);
+  -o-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+}
+
+.edit-delete{
+  margin-bottom: 4vh;
+  padding: 4vh;
+  text-decoration: none;
+  color: black;
+  font-family: "Coustard", serif;
+  font-size: 30px;
+}
+
+ul{
+  list-style: none;
+}
+
+.bird-user-bird-page{
+  text-decoration: none;
+  color: black;
+  font-family: "Roboto serif", serif;
+}
+
+.bird-user-bird-page:hover{
+  text-decoration: underline;
+}
+
+.create-edit{
+  font-family: "Roboto Serif", serif;
+  margin-bottom: 3vh;
+  padding-bottom: 3vh;
+}
